@@ -1,12 +1,12 @@
-# BDI-GB-ZOO
-# 🚀 Project: Proyecto Base de Datos I
+#BDI-GB-ZOO
+#🚀 Proyecto: Proyecto Base de Datos I
 
-Developer: Tatiana Nieto
-Src Directory: /src/GITHub/Doc-UP-TatianaNieto
-Created: Octubre 25 2024 🗓️  
-Last Updated: October 2024 ✨  
+**Revelador**:Tatiana Nieto 
+**Directorio de fuentes**:`/src/GITHub/Doc-UP-TatianaNieto/BDI-GB-ZOO`📂  
+**Creado**: 23 de octubre de 2024 🗓️  
+**Última actualización**: 25 de octubre de 2024 ✨  
 
-## Description
-Welcome to My Awesome Project! This repository houses some of my most exciting code experiments and personal projects. Feel free to explore the /src folder for all the magic. ⚡
+##Descripción
+Bienvenido a**Mi proyecto increíble**! Este repositorio alberga algunos de mis experimentos de código y proyectos personales más interesantes. No dudes en explorarlo.`/fuente`Carpeta para toda la magia. ⚡
 
-Contributions and feedback are always welcome! 🙌
+¡Las contribuciones y los comentarios son siempre bienvenidos! 🙌
