@@ -2,8 +2,8 @@
 # 🚀 Project: Proyecto Base de Datos I
 
 Developer: Tatiana Nieto
-Src Directory: /src
-Created: April 2024 🗓️  
+Src Directory: /src/GITHub/Doc-UP-TatianaNieto
+Created: Octubre 25 2024 🗓️  
 Last Updated: October 2024 ✨  
 
 ## Description
