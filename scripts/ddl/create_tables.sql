@@ -101,13 +101,21 @@ CREATE TABLE CLIMA (
   Nombre VARCHAR(50) NOT NULL    -- Nombre del tipo de clima (obligatorio)
 );
 
+-- Tabla TIPO_VISITANTES
+-- Define los tipos de visitantes y sus descuentos asociados
+CREATE TABLE TIPO_VISITANTES (
+  ID SERIAL PRIMARY KEY, -- Identificador único para cada tipo de visitante
+  Nombre VARCHAR(50) NOT NULL, -- Nombre del tipo de visitante (e.g., Adulto, Menor de edad)
+  Descuento NUMERIC(5, 2) NOT NULL CHECK (Descuento BETWEEN 0 AND 100) -- Porcentaje de descuento aplicable a este tipo de visitante
+);
+
 -- Tabla VISITANTES:
 -- Almacena los datos de los visitantes, permitiendo registrar sus visitas al zoológico.
 
 CREATE TABLE VISITANTES (
   ID SERIAL PRIMARY KEY,         -- Identificador único del visitante
   Nombre VARCHAR(50) NOT NULL,   -- Nombre del visitante (obligatorio)
-  FechaVisita DATE               -- Fecha de la visita al zoológico
+  IDTipoVisitante SERIAL
 );
 
 -- Tabla HABITAT_VISITANTES:
@@ -117,6 +125,9 @@ CREATE TABLE HABITAT_VISITANTES (
   ID SERIAL PRIMARY KEY,         -- Identificador único de la visita
   IDHabitat SERIAL,              -- Identificador del hábitat visitado (clave foránea)
   IDVisitantes SERIAL            -- Identificador del visitante (clave foránea)
+  CostoFinal NUMERIC(10, 2) NOT NULL, -- Costo final, obtenido con la funcion calcular costo.
+  FechaVisita DATE               -- Fecha de la visita al zoológico
+  
 );
 
 -- #################################################
@@ -138,6 +149,9 @@ ALTER TABLE ESPECIE ADD FOREIGN KEY (IDEstadoConservacion) REFERENCES ESTADO_CON
 -- Relaciones de la tabla HABITAT
 ALTER TABLE HABITAT ADD FOREIGN KEY (IDUbicacion) REFERENCES UBICACION (ID);
 ALTER TABLE HABITAT ADD FOREIGN KEY (IDClima) REFERENCES CLIMA (ID);
+
+-- Relaciones de la tabla TIPO_VISITANTES
+ALTER TABLE VISITANTES ADD FOREIGN KEY (IDTipoVisitante) REFERENCES TIPO_VISITANTES (ID);
 
 -- Relaciones de la tabla intermedia HABITAT_VISITANTES
 ALTER TABLE HABITAT_VISITANTES ADD FOREIGN KEY (IDHabitat) REFERENCES HABITAT (ID);

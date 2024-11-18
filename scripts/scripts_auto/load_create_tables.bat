@@ -11,6 +11,13 @@ set "PGDATABASE=zoologico"
 
 :: Ejecuta cada archivo SQL en orden
 
+echo Ejecutando create_schema.sql ...
+psql -h %PGHOST% -p %PGPORT% -U %PGUSER% -d %PGDATABASE% -f "C:\Users\tatia\Desktop\GIT\GITHub\Doc-UP-TatianaNieto\BDI-GB-ZOO\scripts\ddl\create_schema.sql"
+if %errorlevel% neq 0 (
+    echo Error ejecutando create_schema.sql
+    exit /b %errorlevel%
+)
+
 echo Ejecutando TableDefinitions.sql...
 psql -h %PGHOST% -p %PGPORT% -U %PGUSER% -d %PGDATABASE% -f "C:\Users\tatia\Desktop\GIT\GITHub\Doc-UP-TatianaNieto\BDI-GB-ZOO\scripts\ddl\create_tables.sql"
 if %errorlevel% neq 0 (
